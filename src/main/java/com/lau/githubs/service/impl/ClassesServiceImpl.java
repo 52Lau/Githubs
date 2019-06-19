@@ -1,7 +1,7 @@
-package com.lau.faqs2.service.impl;
+package com.lau.githubs.service.impl;
 
-import com.lau.faqs2.model.Classes;
-import com.lau.faqs2.service.ClassesService;
+import com.lau.githubs.model.Classes;
+import com.lau.githubs.service.ClassesService;
 import org.springframework.stereotype.Service;
 
 /**

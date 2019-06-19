@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package com.lau.faqs2.util;
+package com.lau.githubs.util;
 
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;

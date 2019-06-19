@@ -1,13 +1,11 @@
-package com.lau.faqs2.service.impl;
+package com.lau.githubs.service.impl;
 
 import com.github.pagehelper.PageHelper;
-import com.lau.faqs2.mapper.FaqsMapper;
-import com.lau.faqs2.model.Faqs;
-import com.lau.faqs2.service.FaqsService;
+import com.lau.githubs.mapper.FaqsMapper;
+import com.lau.githubs.model.Faqs;
+import com.lau.githubs.service.FaqsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
-import tk.mybatis.mapper.util.StringUtil;
 
 import java.util.List;
 

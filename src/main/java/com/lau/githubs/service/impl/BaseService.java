@@ -22,9 +22,9 @@
  * THE SOFTWARE.
  */
 
-package com.lau.faqs2.service.impl;
+package com.lau.githubs.service.impl;
 
-import com.lau.faqs2.service.IService;
+import com.lau.githubs.service.IService;
 import org.springframework.beans.factory.annotation.Autowired;
 import tk.mybatis.mapper.common.Mapper;
 

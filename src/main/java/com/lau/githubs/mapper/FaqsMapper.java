@@ -1,8 +1,8 @@
-package com.lau.faqs2.mapper;
+package com.lau.githubs.mapper;
 
-import com.lau.faqs2.Provider.FaqsProvider;
-import com.lau.faqs2.model.Faqs;
-import com.lau.faqs2.util.MyMapper;
+import com.lau.githubs.Provider.FaqsProvider;
+import com.lau.githubs.model.Faqs;
+import com.lau.githubs.util.MyMapper;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

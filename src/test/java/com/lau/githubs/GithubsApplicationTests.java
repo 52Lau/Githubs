@@ -1,4 +1,4 @@
-package com.lau.faqs2;
+package com.lau.githubs;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class Faqs2ApplicationTests {
+public class GithubsApplicationTests {
 
 	@Test
 	public void contextLoads() {

@@ -1,10 +1,10 @@
-package com.lau.faqs2.controller;
+package com.lau.githubs.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.lau.faqs2.model.Classes;
-import com.lau.faqs2.model.Faqs;
-import com.lau.faqs2.service.ClassesService;
-import com.lau.faqs2.service.FaqsService;
+import com.lau.githubs.model.Classes;
+import com.lau.githubs.model.Faqs;
+import com.lau.githubs.service.ClassesService;
+import com.lau.githubs.service.FaqsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

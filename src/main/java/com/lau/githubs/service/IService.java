@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package com.lau.faqs2.service;
+package com.lau.githubs.service;
 
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.lau.faqs2.model;
+package com.lau.githubs.model;
 
 import javax.persistence.*;
 

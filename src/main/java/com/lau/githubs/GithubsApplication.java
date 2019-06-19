@@ -1,4 +1,4 @@
-package com.lau.faqs2;
+package com.lau.githubs;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,11 +14,11 @@ import tk.mybatis.spring.annotation.MapperScan;
 @Controller
 @EnableWebMvc
 @SpringBootApplication
-@MapperScan(basePackages = "com.lau.faqs2.mapper")
-public class Faqs2Application extends WebMvcConfigurerAdapter implements CommandLineRunner {
-	private Logger logger = LoggerFactory.getLogger(Faqs2Application.class);
+@MapperScan(basePackages = "com.lau.githubs.mapper")
+public class GithubsApplication extends WebMvcConfigurerAdapter implements CommandLineRunner {
+	private Logger logger = LoggerFactory.getLogger(GithubsApplication.class);
 	public static void main(String[] args) {
-		SpringApplication.run(Faqs2Application.class, args);
+		SpringApplication.run(GithubsApplication.class, args);
 	}
 	@Override
 	public void run(String... args) throws Exception {
@@ -26,6 +26,6 @@ public class Faqs2Application extends WebMvcConfigurerAdapter implements Command
 	}
 	@RequestMapping("/")
 	String home() {
-		return "redirect:faqs2";
+		return "redirect:githubs";
 	}
 }

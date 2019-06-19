@@ -1,6 +1,6 @@
-package com.lau.faqs2.service;
+package com.lau.githubs.service;
 
-import com.lau.faqs2.model.Faqs;
+import com.lau.githubs.model.Faqs;
 
 import java.util.List;
 

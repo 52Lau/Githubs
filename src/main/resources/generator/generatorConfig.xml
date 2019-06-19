@@ -11,7 +11,7 @@
         <property name="endingDelimiter" value="`"/>
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="com.lau.faqs2.util.MyMapper"/>
+            <property name="mappers" value="com.lau.githubs.util.MyMapper"/>
         </plugin>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
@@ -20,11 +20,11 @@
                         password="root">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="com.lau.faqs2.model" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.lau.githubs.model" targetProject="src/main/java"/>
 
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
 
-        <javaClientGenerator targetPackage="com.lau.faqs2.mapper" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.lau.githubs.mapper" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
         <table tableName="%">
