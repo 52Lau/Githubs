@@ -1,6 +1,6 @@
 package com.lau.githubs.mapper;
 
-import com.lau.githubs.Provider.FaqsProvider;
+import com.lau.githubs.provider.FaqsProvider;
 import com.lau.githubs.model.Faqs;
 import com.lau.githubs.util.MyMapper;
 import org.apache.ibatis.annotations.*;

@@ -1,4 +1,4 @@
-package com.lau.githubs.Provider;
+package com.lau.githubs.provider;
 
 import tk.mybatis.mapper.util.StringUtil;
 
