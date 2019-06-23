@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lau.githubs.mapper.HotrepoMapper">
+  <resultMap id="BaseResultMap" type="com.lau.githubs.model.Hotrepo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="des" jdbcType="VARCHAR" property="des" />
+    <result column="languages" jdbcType="VARCHAR" property="languages" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="stars" jdbcType="VARCHAR" property="stars" />
+    <result column="forks" jdbcType="VARCHAR" property="forks" />
+    <result column="staradd" jdbcType="VARCHAR" property="staradd" />
+    <result column="ltype" jdbcType="VARCHAR" property="ltype" />
+    <result column="mtype" jdbcType="VARCHAR" property="mtype" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lau.githubs.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.lau.githubs.model.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="login" jdbcType="VARCHAR" property="login" />
+    <result column="node_id" jdbcType="VARCHAR" property="nodeId" />
+    <result column="avatar_url" jdbcType="VARCHAR" property="avatarUrl" />
+    <result column="gravatar_id" jdbcType="VARCHAR" property="gravatarId" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="html_url" jdbcType="VARCHAR" property="htmlUrl" />
+    <result column="followers_url" jdbcType="VARCHAR" property="followersUrl" />
+    <result column="following_url" jdbcType="VARCHAR" property="followingUrl" />
+    <result column="gists_url" jdbcType="VARCHAR" property="gistsUrl" />
+    <result column="starred_url" jdbcType="VARCHAR" property="starredUrl" />
+    <result column="subscriptions_url" jdbcType="VARCHAR" property="subscriptionsUrl" />
+    <result column="organizations_url" jdbcType="VARCHAR" property="organizationsUrl" />
+    <result column="repos_url" jdbcType="VARCHAR" property="reposUrl" />
+    <result column="events_url" jdbcType="VARCHAR" property="eventsUrl" />
+    <result column="received_events_url" jdbcType="VARCHAR" property="receivedEventsUrl" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="site_admin" jdbcType="VARCHAR" property="siteAdmin" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="company" jdbcType="VARCHAR" property="company" />
+    <result column="blog" jdbcType="VARCHAR" property="blog" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="hireable" jdbcType="VARCHAR" property="hireable" />
+    <result column="bio" jdbcType="VARCHAR" property="bio" />
+    <result column="public_repos" jdbcType="VARCHAR" property="publicRepos" />
+    <result column="public_gists" jdbcType="VARCHAR" property="publicGists" />
+    <result column="followers" jdbcType="VARCHAR" property="followers" />
+    <result column="following" jdbcType="VARCHAR" property="following" />
+    <result column="created_at" jdbcType="VARCHAR" property="createdAt" />
+    <result column="updated_at" jdbcType="VARCHAR" property="updatedAt" />
+  </resultMap>
+
+
+</mapper>
