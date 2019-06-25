@@ -3,13 +3,18 @@ package com.lau.githubs.model;
 import java.util.Date;
 import javax.persistence.*;
 
-public class Hotrepo {
+public class Hotrepo extends BaseBean {
     /**
      * id
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    /**
+     * 作者名
+     */
+    private String another;
 
     /**
      * 项目名
@@ -82,6 +87,24 @@ public class Hotrepo {
      */
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    /**
+     * 获取作者名
+     *
+     * @return another - 作者名
+     */
+    public String getAnother() {
+        return another;
+    }
+
+    /**
+     * 设置作者名
+     *
+     * @param another 作者名
+     */
+    public void setAnother(String another) {
+        this.another = another;
     }
 
     /**
