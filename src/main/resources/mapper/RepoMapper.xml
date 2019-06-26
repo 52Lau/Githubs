@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lau.githubs.mapper.RepoMapper">
+  <resultMap id="BaseResultMap" type="com.lau.githubs.model.Repo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="node_id" jdbcType="VARCHAR" property="nodeId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="full_name" jdbcType="VARCHAR" property="fullName" />
+    <result column="owner_id" jdbcType="VARCHAR" property="ownerId" />
+    <result column="html_url" jdbcType="VARCHAR" property="htmlUrl" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="fork" jdbcType="VARCHAR" property="fork" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="forks_url" jdbcType="VARCHAR" property="forksUrl" />
+    <result column="keys_url" jdbcType="VARCHAR" property="keysUrl" />
+    <result column="collaborators_url" jdbcType="VARCHAR" property="collaboratorsUrl" />
+    <result column="teams_url" jdbcType="VARCHAR" property="teamsUrl" />
+    <result column="hooks_url" jdbcType="VARCHAR" property="hooksUrl" />
+    <result column="issue_events_url" jdbcType="VARCHAR" property="issueEventsUrl" />
+    <result column="events_url" jdbcType="VARCHAR" property="eventsUrl" />
+    <result column="assignees_url" jdbcType="VARCHAR" property="assigneesUrl" />
+    <result column="branches_url" jdbcType="VARCHAR" property="branchesUrl" />
+    <result column="tags_url" jdbcType="VARCHAR" property="tagsUrl" />
+    <result column="blobs_url" jdbcType="VARCHAR" property="blobsUrl" />
+    <result column="git_tags_url" jdbcType="VARCHAR" property="gitTagsUrl" />
+    <result column="git_refs_url" jdbcType="VARCHAR" property="gitRefsUrl" />
+    <result column="trees_url" jdbcType="VARCHAR" property="treesUrl" />
+    <result column="statuses_url" jdbcType="VARCHAR" property="statusesUrl" />
+    <result column="languages_url" jdbcType="VARCHAR" property="languagesUrl" />
+    <result column="stargazers_url" jdbcType="VARCHAR" property="stargazersUrl" />
+    <result column="contributors_url" jdbcType="VARCHAR" property="contributorsUrl" />
+    <result column="subscribers_url" jdbcType="VARCHAR" property="subscribersUrl" />
+    <result column="subscription_url" jdbcType="VARCHAR" property="subscriptionUrl" />
+    <result column="commits_url" jdbcType="VARCHAR" property="commitsUrl" />
+    <result column="git_commits_url" jdbcType="VARCHAR" property="gitCommitsUrl" />
+    <result column="comments_url" jdbcType="VARCHAR" property="commentsUrl" />
+    <result column="issue_comment_url" jdbcType="VARCHAR" property="issueCommentUrl" />
+    <result column="contents_url" jdbcType="VARCHAR" property="contentsUrl" />
+    <result column="compare_url" jdbcType="VARCHAR" property="compareUrl" />
+    <result column="merges_url" jdbcType="VARCHAR" property="mergesUrl" />
+    <result column="archive_url" jdbcType="VARCHAR" property="archiveUrl" />
+    <result column="downloads_url" jdbcType="VARCHAR" property="downloadsUrl" />
+    <result column="issues_url" jdbcType="VARCHAR" property="issuesUrl" />
+    <result column="pulls_url" jdbcType="VARCHAR" property="pullsUrl" />
+    <result column="milestones_url" jdbcType="VARCHAR" property="milestonesUrl" />
+    <result column="notifications_url" jdbcType="VARCHAR" property="notificationsUrl" />
+    <result column="labels_url" jdbcType="VARCHAR" property="labelsUrl" />
+    <result column="releases_url" jdbcType="VARCHAR" property="releasesUrl" />
+    <result column="deployments_url" jdbcType="VARCHAR" property="deploymentsUrl" />
+    <result column="created_at" jdbcType="VARCHAR" property="createdAt" />
+    <result column="updated_at" jdbcType="VARCHAR" property="updatedAt" />
+    <result column="pushed_at" jdbcType="VARCHAR" property="pushedAt" />
+    <result column="git_url" jdbcType="VARCHAR" property="gitUrl" />
+    <result column="ssh_url" jdbcType="VARCHAR" property="sshUrl" />
+    <result column="clone_url" jdbcType="VARCHAR" property="cloneUrl" />
+    <result column="svn_url" jdbcType="VARCHAR" property="svnUrl" />
+    <result column="homepage" jdbcType="VARCHAR" property="homepage" />
+    <result column="size" jdbcType="VARCHAR" property="size" />
+    <result column="stargazers_count" jdbcType="VARCHAR" property="stargazersCount" />
+    <result column="watchers_count" jdbcType="VARCHAR" property="watchersCount" />
+    <result column="language" jdbcType="VARCHAR" property="language" />
+    <result column="has_issues" jdbcType="INTEGER" property="hasIssues" />
+    <result column="has_projects" jdbcType="INTEGER" property="hasProjects" />
+    <result column="has_downloads" jdbcType="INTEGER" property="hasDownloads" />
+    <result column="has_wiki" jdbcType="INTEGER" property="hasWiki" />
+    <result column="has_pages" jdbcType="INTEGER" property="hasPages" />
+    <result column="forks_count" jdbcType="VARCHAR" property="forksCount" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+
+
+</mapper>
