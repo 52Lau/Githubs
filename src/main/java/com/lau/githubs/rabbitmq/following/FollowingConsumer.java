@@ -6,6 +6,7 @@ import com.lau.githubs.githubspider.GitHubSpider;
 import com.lau.githubs.githubspider.dto.GitHubUserFollowIng;
 import com.lau.githubs.model.dto.MsgDTO;
 import com.lau.githubs.rabbitmq.ImmediateSender;
+import com.lau.githubs.rabbitmq.config.Config;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
@@ -30,14 +31,14 @@ public class FollowingConsumer {
     @Resource
     ImmediateSender immediateSender;
 
-    @RabbitListener(queues = Constants.FOLLOWING_EXCHANGE)
+    @RabbitListener(queues = Config.FOLLOWING_IMMEDIATE_QUEUE)
     @RabbitHandler
     public void showMessage(String msg) {
         log.info("收到延时消息了--FollowingConsumer:{}" + msg);
         MsgDTO msgDTO = JSON.parseObject(msg, MsgDTO.class);
         List<GitHubUserFollowIng> gitHubUserFollowList = GitHubSpider.gen_user_following_url(msgDTO.getUsername(), msgDTO.getCount());
         if (!CollectionUtils.isEmpty(gitHubUserFollowList)) {
-            gitHubUserFollowList.forEach(gitHubUserFollowIng -> immediateSender.send(JSON.toJSONString(gitHubUserFollowIng.getLogin()), Constants.USER_EXCHANGE, 10000)
+            gitHubUserFollowList.forEach(gitHubUserFollowIng -> immediateSender.send(JSON.toJSONString(gitHubUserFollowIng.getLogin()), Config.FOLLOWING_DEAD_LETTER_EXCHANGE, Config.FOLLOWING_DELAY_ROUTING_KEY, 10000)
             );
         }
     }

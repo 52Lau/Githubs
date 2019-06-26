@@ -17,8 +17,8 @@ public class ImmediateSender {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void send(String msg, String exchange, int delayTime) {
-        this.rabbitTemplate.convertAndSend(exchange, msg, message -> {
+    public void send(String msg, String deadLetterExchange,String delayRoutingKey,int delayTime) {
+        this.rabbitTemplate.convertAndSend(deadLetterExchange,delayRoutingKey, msg, message -> {
             message.getMessageProperties().setExpiration(delayTime + "");
             return message;
         });

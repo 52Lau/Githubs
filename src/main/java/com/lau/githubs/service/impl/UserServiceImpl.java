@@ -8,6 +8,7 @@ import com.lau.githubs.mapper.UserMapper;
 import com.lau.githubs.model.User;
 import com.lau.githubs.model.dto.MsgDTO;
 import com.lau.githubs.rabbitmq.ImmediateSender;
+import com.lau.githubs.rabbitmq.config.Config;
 import com.lau.githubs.redis.RedisService;
 import com.lau.githubs.redis.RepoKey;
 import com.lau.githubs.service.UserService;
@@ -42,8 +43,9 @@ public class UserServiceImpl implements UserService {
         MsgDTO followerDTO = new MsgDTO(userName, gitHubUserInfo.getFollowers());
         MsgDTO followingDTO = new MsgDTO(userName, gitHubUserInfo.getFollowing());
         //数据直接下发
-        immediateSender.send(JSON.toJSONString(repoDTO), Constants.REPO_EXCHANGE, 10000);
-        immediateSender.send(JSON.toJSONString(followerDTO), Constants.FOLLOWER_EXCHANGE, 10000);
-        immediateSender.send(JSON.toJSONString(followingDTO), Constants.FOLLOWING_EXCHANGE, 10000);
+        //to_do
+        immediateSender.send(JSON.toJSONString(repoDTO), Config.REPO_DEAD_LETTER_EXCHANGE, Config.REPO_DELAY_ROUTING_KEY, 10000);
+        immediateSender.send(JSON.toJSONString(followerDTO), Config.FOLLOWER_DEAD_LETTER_EXCHANGE, Config.FOLLOWER_DELAY_ROUTING_KEY, 10000);
+        immediateSender.send(JSON.toJSONString(followingDTO), Config.FOLLOWING_DEAD_LETTER_EXCHANGE, Config.FOLLOWING_DELAY_ROUTING_KEY, 10000);
     }
 }

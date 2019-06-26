@@ -17,9 +17,6 @@ public abstract class Constants {
 
     public static final String DELAY_ROUTING_KEY = "delay_routing_key";
 
-    public static final String USER_EXCHANGE = "user";
-    public static final String REPO_EXCHANGE = "repo";
-    public static final String FOLLOWER_EXCHANGE = "follower";
-    public static final String FOLLOWING_EXCHANGE = "following";
+
 
 }

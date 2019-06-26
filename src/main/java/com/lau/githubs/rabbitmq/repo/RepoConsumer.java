@@ -7,6 +7,7 @@ import com.lau.githubs.githubspider.dto.GitHubUserRepo;
 import com.lau.githubs.mapper.RepoMapper;
 import com.lau.githubs.model.Repo;
 import com.lau.githubs.model.dto.MsgDTO;
+import com.lau.githubs.rabbitmq.config.Config;
 import com.lau.githubs.redis.RedisService;
 import com.lau.githubs.redis.RepoKey;
 import lombok.extern.slf4j.Slf4j;
@@ -36,7 +37,7 @@ public class RepoConsumer {
     @Resource
     RepoMapper repoMapper;
 
-    @RabbitListener(queues = Constants.REPO_EXCHANGE)
+    @RabbitListener(queues = Config.REPO_IMMEDIATE_QUEUE)
     @RabbitHandler
     public void showMessage(String msg) {
         log.info("收到延时消息了---RepoConsumer:{}" + msg);

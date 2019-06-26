@@ -1,5 +1,6 @@
 package com.lau.githubs.mq;
 
+import com.lau.githubs.rabbitmq.config.Config;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -9,8 +10,10 @@ import java.util.Date;
 
 /**
  * 生产者生产消息
+ *
+ * 暂时注释掉，避免注入
  */
-@Component
+//@Component
 public class ImmediateSender {
     @Autowired
     private RabbitTemplate rabbitTemplate;

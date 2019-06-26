@@ -1,5 +1,6 @@
 package com.lau.githubs.mq;
 
+import com.lau.githubs.rabbitmq.config.Config;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
