@@ -35,9 +35,10 @@ public class FollowingConsumer {
     public void showMessage(String msg) {
         log.info("收到延时消息了--FollowingConsumer:{}" + msg);
         MsgDTO msgDTO = JSON.parseObject(msg, MsgDTO.class);
-        List<GitHubUserFollowIng> gitHubUserFollowIngs = GitHubSpider.gen_user_following_url(msgDTO.getUsername(), msgDTO.getCount());
-        if (!CollectionUtils.isEmpty(gitHubUserFollowIngs)) {
-            immediateSender.send(JSON.toJSONString(gitHubUserFollowIngs), Constants.USER_EXCHANGE, 10000);
+        List<GitHubUserFollowIng> gitHubUserFollowList = GitHubSpider.gen_user_following_url(msgDTO.getUsername(), msgDTO.getCount());
+        if (!CollectionUtils.isEmpty(gitHubUserFollowList)) {
+            gitHubUserFollowList.forEach(gitHubUserFollowIng -> immediateSender.send(JSON.toJSONString(gitHubUserFollowIng.getLogin()), Constants.USER_EXCHANGE, 10000)
+            );
         }
     }
 }

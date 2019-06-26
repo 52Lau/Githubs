@@ -1,12 +1,15 @@
 package com.lau.githubs.rabbitmq.user;
 
 import com.lau.githubs.common.Constants;
+import com.lau.githubs.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 
 /**
@@ -19,11 +22,13 @@ import org.springframework.stereotype.Component;
 @Configuration
 public class UserConsumer {
 
+    @Resource
+    UserService userService;
 
     @RabbitListener(queues = Constants.USER_EXCHANGE)
     @RabbitHandler
     public void showMessage(String msg) {
         log.info("收到延时消息了---RepoConsumer:{}" + msg);
-
+        userService.performTask(msg);
     }
 }

@@ -37,7 +37,7 @@ public class FollowerConsumer {
         MsgDTO msgDTO = JSON.parseObject(msg, MsgDTO.class);
         List<GitHubUserFollower> gitHubUserFollowers = GitHubSpider.gen_user_follwer_url(msgDTO.getUsername(), msgDTO.getCount());
         if (!CollectionUtils.isEmpty(gitHubUserFollowers)) {
-            immediateSender.send(JSON.toJSONString(gitHubUserFollowers), Constants.USER_EXCHANGE, 10000);
+            gitHubUserFollowers.forEach(gitHubUserFollower -> immediateSender.send(JSON.toJSONString(gitHubUserFollower.getLogin()), Constants.USER_EXCHANGE, 10000));
         }
     }
 }

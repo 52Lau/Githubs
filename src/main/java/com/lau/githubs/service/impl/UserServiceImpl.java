@@ -4,8 +4,12 @@ import com.alibaba.fastjson.JSON;
 import com.lau.githubs.common.Constants;
 import com.lau.githubs.githubspider.GitHubSpider;
 import com.lau.githubs.githubspider.dto.GitHubUserInfo;
+import com.lau.githubs.mapper.UserMapper;
+import com.lau.githubs.model.User;
 import com.lau.githubs.model.dto.MsgDTO;
 import com.lau.githubs.rabbitmq.ImmediateSender;
+import com.lau.githubs.redis.RedisService;
+import com.lau.githubs.redis.RepoKey;
 import com.lau.githubs.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -20,12 +24,20 @@ public class UserServiceImpl implements UserService {
     @Resource
     ImmediateSender immediateSender;
 
+    @Resource
+    RedisService redisService;
+
+    @Resource
+    UserMapper userMapper;
+
     @Override
     public void performTask(String userName) {
 
         System.out.println("username------" + userName);
 
         GitHubUserInfo gitHubUserInfo = GitHubSpider.gen_user_page_url(userName);
+        userMapper.insert(new User(gitHubUserInfo));
+        redisService.set(new RepoKey("user_"), gitHubUserInfo.getLogin(), gitHubUserInfo);
         MsgDTO repoDTO = new MsgDTO(userName, gitHubUserInfo.getPublic_repos());
         MsgDTO followerDTO = new MsgDTO(userName, gitHubUserInfo.getFollowers());
         MsgDTO followingDTO = new MsgDTO(userName, gitHubUserInfo.getFollowing());

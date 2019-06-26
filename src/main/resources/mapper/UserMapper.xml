@@ -22,7 +22,7 @@
     <result column="events_url" jdbcType="VARCHAR" property="eventsUrl" />
     <result column="received_events_url" jdbcType="VARCHAR" property="receivedEventsUrl" />
     <result column="type" jdbcType="VARCHAR" property="type" />
-    <result column="site_admin" jdbcType="VARCHAR" property="siteAdmin" />
+    <result column="site_admin" jdbcType="BOOLEAN" property="siteAdmin" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="company" jdbcType="VARCHAR" property="company" />
     <result column="blog" jdbcType="VARCHAR" property="blog" />

@@ -1,5 +1,7 @@
 package com.lau.githubs.model;
 
+import com.lau.githubs.githubspider.dto.GitHubUserInfo;
+
 import javax.persistence.*;
 
 public class User {
@@ -53,7 +55,7 @@ public class User {
     private String type;
 
     @Column(name = "site_admin")
-    private String siteAdmin;
+    private Boolean siteAdmin;
 
     private String name;
 
@@ -84,6 +86,53 @@ public class User {
 
     @Column(name = "updated_at")
     private String updatedAt;
+
+
+    public User(GitHubUserInfo gitHubUserInfo) {
+        this.login = gitHubUserInfo.getLogin();
+        this.nodeId = gitHubUserInfo.getNode_id();
+        this.avatarUrl = gitHubUserInfo.getAvatar_url();
+        this.gravatarId = gitHubUserInfo.getGravatar_id();
+        this.url = gitHubUserInfo.getUrl();
+        this.htmlUrl = gitHubUserInfo.getHtml_url();
+        this.followersUrl = gitHubUserInfo.getFollowers_url();
+        this.followingUrl = gitHubUserInfo.getFollowing_url();
+        this.gistsUrl = gitHubUserInfo.getGists_url();
+        this.starredUrl = gitHubUserInfo.getStarred_url();
+        this.subscriptionsUrl = gitHubUserInfo.getSubscriptions_url();
+        this.organizationsUrl = gitHubUserInfo.getOrganizations_url();
+        this.reposUrl = gitHubUserInfo.getRepos_url();
+        this.eventsUrl = gitHubUserInfo.getEvents_url();
+        this.receivedEventsUrl = gitHubUserInfo.getReceived_events_url();
+        this.type = gitHubUserInfo.getType();
+        this.siteAdmin = gitHubUserInfo.isSite_admin();
+        if (gitHubUserInfo.getName() != null) {
+            this.name = gitHubUserInfo.getName().toString();
+        }
+        if (gitHubUserInfo.getCompany() != null) {
+            this.company = gitHubUserInfo.getCompany().toString();
+        }
+        this.blog = gitHubUserInfo.getBlog();
+        if (gitHubUserInfo.getLocation() != null) {
+            this.location = gitHubUserInfo.getLocation().toString();
+        }
+        if (gitHubUserInfo.getEmail() != null) {
+            this.email = gitHubUserInfo.getEmail().toString();
+        }
+
+        if (gitHubUserInfo.getHireable() != null) {
+            this.hireable = gitHubUserInfo.getHireable().toString();
+        }
+        if (gitHubUserInfo.getBio() != null) {
+            this.bio = gitHubUserInfo.getBio().toString();
+        }
+        this.publicRepos = String.valueOf(gitHubUserInfo.getPublic_repos());
+        this.publicGists = String.valueOf(gitHubUserInfo.getPublic_gists());
+        this.followers = String.valueOf(gitHubUserInfo.getFollowers());
+        this.following = String.valueOf(gitHubUserInfo.getFollowing());
+        this.createdAt = gitHubUserInfo.getCreated_at();
+        this.updatedAt = gitHubUserInfo.getUpdated_at();
+    }
 
     /**
      * @return id
@@ -326,14 +375,14 @@ public class User {
     /**
      * @return site_admin
      */
-    public String getSiteAdmin() {
+    public Boolean getSiteAdmin() {
         return siteAdmin;
     }
 
     /**
      * @param siteAdmin
      */
-    public void setSiteAdmin(String siteAdmin) {
+    public void setSiteAdmin(Boolean siteAdmin) {
         this.siteAdmin = siteAdmin;
     }
 
