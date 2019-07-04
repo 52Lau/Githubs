@@ -41,11 +41,11 @@ public class RepoConsumer {
     @RabbitHandler
     public void showMessage(String msg) {
         log.info("收到延时消息了---RepoConsumer:{}" + msg);
-        MsgDTO msgDTO = JSON.parseObject(msg, MsgDTO.class);
+        /*MsgDTO msgDTO = JSON.parseObject(msg, MsgDTO.class);
         List<GitHubUserRepo> gitHubUserRepos = GitHubSpider.gen_user_repo_url(msgDTO.getUsername(), msgDTO.getCount());
         List<Repo> repoList = gitHubUserRepos.stream().map(Repo::new).collect(Collectors.toList());
         repoMapper.insertList(repoList);
-        redisService.set(new RepoKey("repo_"), msgDTO.getUsername(), repoList);
+        redisService.set(new RepoKey("repo_"), msgDTO.getUsername(), repoList);*/
 
     }
 }

@@ -35,10 +35,10 @@ public class FollowerConsumer {
     @RabbitHandler
     public void showMessage(String msg) {
         log.info("收到延时消息了---FollowerConsumer:{}", msg);
-        MsgDTO msgDTO = JSON.parseObject(msg, MsgDTO.class);
+        /*MsgDTO msgDTO = JSON.parseObject(msg, MsgDTO.class);
         List<GitHubUserFollower> gitHubUserFollowers = GitHubSpider.gen_user_follwer_url(msgDTO.getUsername(), msgDTO.getCount());
         if (!CollectionUtils.isEmpty(gitHubUserFollowers)) {
             gitHubUserFollowers.forEach(gitHubUserFollower -> immediateSender.send(JSON.toJSONString(gitHubUserFollower.getLogin()), Config.FOLLOWER_DEAD_LETTER_EXCHANGE, Config.FOLLOWER_DELAY_ROUTING_KEY, 10000));
-        }
+        }*/
     }
 }

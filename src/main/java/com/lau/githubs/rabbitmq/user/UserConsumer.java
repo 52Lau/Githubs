@@ -30,6 +30,6 @@ public class UserConsumer {
     @RabbitHandler
     public void showMessage(String msg) {
         log.info("收到延时消息了---UserConsumer:{}" + msg);
-        userService.performTask(msg);
+        /*userService.performTask(msg);*/
     }
 }

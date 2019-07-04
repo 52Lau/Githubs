@@ -23,5 +23,6 @@ public class ImmediateReceiver {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println("收到延时消息时间："+sdf.format(new Date()) + " Delay sent.");
         System.out.println("收到延时消息了:" + msg);
+
     }
 }

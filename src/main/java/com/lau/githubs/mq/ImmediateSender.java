@@ -22,7 +22,8 @@ public class ImmediateSender {
         System.out.println("msg="+",delayTime" + delayTime);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         this.rabbitTemplate.convertAndSend(Config.DEAD_LETTER_EXCHANGE, Config.DELAY_ROUTING_KEY, msg, message -> {
-            message.getMessageProperties().setExpiration(delayTime + ""); System.out.println(sdf.format(new Date()) + " Delay sent."); return message;
+            message.getMessageProperties().setExpiration(delayTime + "");
+            System.out.println(sdf.format(new Date()) + " Delay sent."); return message;
         });
     }
 
