@@ -31,8 +31,8 @@ public class FollowerConsumer {
     @Resource
     ImmediateSender immediateSender;
 
-    @RabbitListener(queues = Config.FOLLOWER_IMMEDIATE_QUEUE)
-    @RabbitHandler
+    //@RabbitListener(queues = Config.FOLLOWER_IMMEDIATE_QUEUE)
+    //@RabbitHandler
     public void showMessage(String msg) {
         log.info("收到延时消息了---FollowerConsumer:{}", msg);
         /*MsgDTO msgDTO = JSON.parseObject(msg, MsgDTO.class);

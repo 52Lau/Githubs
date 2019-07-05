@@ -37,8 +37,8 @@ public class RepoConsumer {
     @Resource
     RepoMapper repoMapper;
 
-    @RabbitListener(queues = Config.REPO_IMMEDIATE_QUEUE)
-    @RabbitHandler
+    //@RabbitListener(queues = Config.REPO_IMMEDIATE_QUEUE)
+    //@RabbitHandler
     public void showMessage(String msg) {
         log.info("收到延时消息了---RepoConsumer:{}" + msg);
         /*MsgDTO msgDTO = JSON.parseObject(msg, MsgDTO.class);

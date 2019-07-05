@@ -17,8 +17,8 @@ import java.util.Date;
 @EnableRabbit
 @Configuration
 public class ImmediateReceiver {
-    @RabbitListener(queues = Config.IMMEDIATE_QUEUE)
-    @RabbitHandler
+    //@RabbitListener(queues = Config.IMMEDIATE_QUEUE)
+   //@RabbitHandler
     public void get(String msg) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println("收到延时消息时间："+sdf.format(new Date()) + " Delay sent.");

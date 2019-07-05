@@ -26,8 +26,8 @@ public class UserConsumer {
     @Resource
     UserService userService;
 
-    @RabbitListener(queues = Config.USER_IMMEDIATE_QUEUE)
-    @RabbitHandler
+    //@RabbitListener(queues = Config.USER_IMMEDIATE_QUEUE)
+    //@RabbitHandler
     public void showMessage(String msg) {
         log.info("收到延时消息了---UserConsumer:{}" + msg);
         /*userService.performTask(msg);*/

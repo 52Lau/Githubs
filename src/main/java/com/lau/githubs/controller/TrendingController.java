@@ -36,10 +36,10 @@ public class TrendingController {
     public String sendmsg(){
         try {
             immediateSender.send("我是一个1延时消息，睡10秒",Config.DEAD_LETTER_EXCHANGE, Config.DELAY_ROUTING_KEY,10000);//10秒
-            immediateSender.send("我是一个2延时消息，睡10秒",Config.USER_DEAD_LETTER_EXCHANGE, Config.USER_DELAY_ROUTING_KEY,10000);//10秒
-            immediateSender.send("我是一个3延时消息，睡10秒",Config.REPO_DEAD_LETTER_EXCHANGE, Config.REPO_DELAY_ROUTING_KEY,10000);//10秒
-            immediateSender.send("我是一个4延时消息，睡10秒",Config.FOLLOWER_DEAD_LETTER_EXCHANGE, Config.FOLLOWER_DELAY_ROUTING_KEY,10000);//10秒
-            immediateSender.send("我是一个5延时消息，睡10秒",Config.FOLLOWING_DEAD_LETTER_EXCHANGE, Config.FOLLOWING_DELAY_ROUTING_KEY,10000);//10秒
+            immediateSender.send("52Lau",Config.USER_DEAD_LETTER_EXCHANGE, Config.USER_DELAY_ROUTING_KEY,10000);//10秒
+            //immediateSender.send("我是一个3延时消息，睡10秒",Config.REPO_DEAD_LETTER_EXCHANGE, Config.REPO_DELAY_ROUTING_KEY,10000);//10秒
+            //immediateSender.send("我是一个4延时消息，睡10秒",Config.FOLLOWER_DEAD_LETTER_EXCHANGE, Config.FOLLOWER_DELAY_ROUTING_KEY,10000);//10秒
+            //immediateSender.send("我是一个5延时消息，睡10秒",Config.FOLLOWING_DEAD_LETTER_EXCHANGE, Config.FOLLOWING_DELAY_ROUTING_KEY,10000);//10秒
         } catch (Exception e) {
             e.printStackTrace();
         }
